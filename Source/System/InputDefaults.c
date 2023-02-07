@@ -41,7 +41,7 @@ const InputBinding kDefaultInputBindings[NUM_CONTROL_NEEDS] =
 
 	[kNeed_CameraMode] =
 	{
-		.userKey = { SDL_SCANCODE_GRAVE },
+		.userKey = { SDL_SCANCODE_TAB },
 		.userPad = { CB(LEFTSHOULDER) },
 	},
 
@@ -116,7 +116,7 @@ const InputBinding kDefaultInputBindings[NUM_CONTROL_NEEDS] =
 
 	[kNeed_UIConfirm] =
 	{
-		.key = { SDL_SCANCODE_RETURN, SDL_SCANCODE_SPACE, SDL_SCANCODE_KP_ENTER },
+		.key = { SDL_SCANCODE_RETURN, SDL_SCANCODE_KP_ENTER, SDL_SCANCODE_LCTRL },
 		.pad = { CB(A) },
 	},
 
@@ -133,14 +133,14 @@ const InputBinding kDefaultInputBindings[NUM_CONTROL_NEEDS] =
 
 	[kNeed_UIBack] =
 	{
-		.key = { SDL_SCANCODE_ESCAPE, SDL_SCANCODE_BACKSPACE },
+		.key = { SDL_SCANCODE_ESCAPE, SDL_SCANCODE_BACKSPACE, SDL_SCANCODE_LALT },
 		.pad = {CB(B), CB(BACK) },
 		.mouseButton = SDL_BUTTON_X1
 	},
 
 	[kNeed_UIPause] =
 	{
-		.key = { SDL_SCANCODE_ESCAPE },
+		.key = { SDL_SCANCODE_RETURN },
 		.pad = { CB(START) },
 	},
 

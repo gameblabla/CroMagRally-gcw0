@@ -180,7 +180,7 @@ const MenuItem gSettingsMenuTree[] =
 	},
 
 	{.id='graf'},
-	{
+	/*{
 		kMICycler1, STR_FULLSCREEN,
 		.callback=OnToggleFullscreen,
 		.cycler=
@@ -203,7 +203,7 @@ const MenuItem gSettingsMenuTree[] =
 				.generateChoiceString = GetDisplayName,
 			},
 		},
-	},
+	},*/
 	{
 		kMICycler1, STR_ANTIALIASING,
 		.callback = OnChangeMSAA,

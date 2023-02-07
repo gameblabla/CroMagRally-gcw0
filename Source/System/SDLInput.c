@@ -553,13 +553,14 @@ OGLVector2D GetAnalogSteering(int playerID)
 
 int GetNumControllers(void)
 {
-	int count = 0;
-
-#if 0
-	for (int i = 0; i < SDL_NumJoysticks(); ++i)
+	int count = 1;
+	// Gameblabla, we need this
+#if 1
+	for (int i = 0; i < MAX_LOCAL_PLAYERS; i++)
 	{
 		if (SDL_IsGameController(i))
 		{
+			gControllers[i].open = 1;
 			count++;
 		}
 	}
@@ -722,16 +723,14 @@ static SDL_GameController* TryOpenAnyUnusedController(bool showMessage)
 
 void Rumble(float strength, uint32_t ms)
 {
-	#if 0	// TODO: Rumble for specific player
-	if (NULL == gSDLController || !gGamePrefs.gamepadRumble)
+	/*if (NULL == gSDLController || !gGamePrefs.gamepadRumble)
 		return;
-
+*/
 #if !(SDL_VERSION_ATLEAST(2,0,9))
 	#warning Rumble support requires SDL 2.0.9 or later
 #else
-	SDL_GameControllerRumble(gSDLController, (Uint16)(strength * 65535), (Uint16)(strength * 65535), ms);
+	SDL_GameControllerRumble(gControllers[0].controllerInstance, (Uint16)(strength * 65535), (Uint16)(strength * 65535), ms);
 #endif
-	#endif
 }
 
 static int GetControllerSlotFromSDLJoystickInstanceID(SDL_JoystickID joystickInstanceID)

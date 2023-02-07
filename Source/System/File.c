@@ -1430,11 +1430,7 @@ Ptr						tempBuffer16 = nil;
 	if (iErr)
 		DoFatalAlert("ReadDataFromPlayfieldFile: FSpOpenDF failed!");
 
-#if HQ_TERRAIN
-	LoadTerrainSuperTileTexturesSeamless(fRefNum);
-#else
 	LoadTerrainSuperTileTextures(fRefNum);
-#endif
 
 			/* CLOSE THE FILE */
 

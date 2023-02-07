@@ -9,3 +9,4 @@ dist/
 .vs/
 .DS_Store
 *.user
+*.opk

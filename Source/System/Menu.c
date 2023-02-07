@@ -335,6 +335,16 @@ static const char* GetKeyBindingName(int row, int col)
 		case SDL_SCANCODE_BACKSLASH:		return "Backslash";
 		case SDL_SCANCODE_GRAVE:			return "Backtick";
 		case SDL_SCANCODE_SEMICOLON:		return "Semicolon";
+		// Gameblabla, GCW0/RG350
+		case SDL_SCANCODE_LCTRL:			return "A";
+		case SDL_SCANCODE_LALT:				return "B";
+		case SDL_SCANCODE_LSHIFT:			return "X";
+		case SDL_SCANCODE_SPACE:			return "Y";
+		case SDL_SCANCODE_TAB:				return "L";
+		case SDL_SCANCODE_BACKSPACE:		return "R";
+		case SDL_SCANCODE_HOME:				return "POWER";
+		case SDL_SCANCODE_PAGEUP:			return "L2";
+		case SDL_SCANCODE_PAGEDOWN:			return "R2";
 		default:							return SDL_GetScancodeName(scancode);
 	}
 }
