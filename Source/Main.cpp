@@ -160,7 +160,6 @@ retryVideo:
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_COMPATIBILITY);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
-
 	gCurrentAntialiasingLevel = gGamePrefs.antialiasingLevel;
 	if (gCurrentAntialiasingLevel != 0)
 	{
@@ -178,13 +177,7 @@ retryVideo:
 	int initialHeight = 480;
 	GetInitialWindowSize(display, initialWidth, initialHeight);
 
-	gSDLWindow = SDL_CreateWindow(
-			"Cro-Mag Rally " PROJECT_VERSION,
-			SDL_WINDOWPOS_UNDEFINED_DISPLAY(display),
-			SDL_WINDOWPOS_UNDEFINED_DISPLAY(display),
-			initialWidth,
-			initialHeight,
-			SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE | SDL_WINDOW_SHOWN);
+	gSDLWindow = SDL_CreateWindow("Cro-Mag Rally", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);
 
 	if (!gSDLWindow)
 	{

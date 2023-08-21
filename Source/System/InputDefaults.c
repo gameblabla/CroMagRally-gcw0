@@ -54,14 +54,22 @@ const InputBinding kDefaultInputBindings[NUM_CONTROL_NEEDS] =
 	[kNeed_Forward] =
 	{
 		.userKey = { SDL_SCANCODE_UP, SDL_SCANCODE_W },
+#ifdef REVERSE_AB
+		.userPad = { CB(B) },
+#else
 		.userPad = { CB(A) },
+#endif
 		.hardPad = { CB(DPAD_UP) },	// hardcoded
 	},
 
 	[kNeed_Backward] =
 	{
 		.userKey = { SDL_SCANCODE_DOWN, SDL_SCANCODE_S },
+#ifdef REVERSE_AB
+		.userPad = { CB(A) },
+#else
 		.userPad = { CB(B) },
+#endif
 		.hardPad = { CB(DPAD_DOWN) },	// hardcoded
 	},
 
@@ -117,7 +125,11 @@ const InputBinding kDefaultInputBindings[NUM_CONTROL_NEEDS] =
 	[kNeed_UIConfirm] =
 	{
 		.key = { SDL_SCANCODE_RETURN, SDL_SCANCODE_KP_ENTER, SDL_SCANCODE_LCTRL },
+#ifdef REVERSE_AB
+		.pad = { CB(B) },
+#else
 		.pad = { CB(A) },
+#endif
 	},
 
 	[kNeed_UIDelete] =
@@ -134,7 +146,11 @@ const InputBinding kDefaultInputBindings[NUM_CONTROL_NEEDS] =
 	[kNeed_UIBack] =
 	{
 		.key = { SDL_SCANCODE_ESCAPE, SDL_SCANCODE_BACKSPACE, SDL_SCANCODE_LALT },
+#ifdef REVERSE_AB
+		.pad = {CB(A), CB(BACK) },
+#else
 		.pad = {CB(B), CB(BACK) },
+#endif
 		.mouseButton = SDL_BUTTON_X1
 	},
 
